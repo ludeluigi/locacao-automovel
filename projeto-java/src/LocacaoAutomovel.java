@@ -3,22 +3,25 @@ import java.util.List;
 
 public class LocacaoAutomovel {
 
-    public static List<String> escolherAutomovelPossivel ( int idade, double salario, String estadoResidente) {
+    public static List<String> escolherAutomovelPossivel ( RequisicaoLocacaoAutomovel requisicao) {
 
         List<String> possiveisEscolhas = new ArrayList<>();
 
-        if (idade > 35 && salario >= 2.500) {
+        if (requisicao.getIdade() > 35 && requisicao.getSalario() >= 2.500) {
             possiveisEscolhas.add("Passeio");
         }
 
-        if (idade >= 25 && idade <= 40 && estadoResidente.equalsIgnoreCase("SP") && salario >= 4.000 ){
+        if (requisicao.getIdade() >= 25 && requisicao.getIdade() <= 40 && requisicao.getEstadoResidente().equalsIgnoreCase("SP") && requisicao.getSalario() >= 4.000 ){
             possiveisEscolhas.add("Moto");
         }
 
-        if (idade >= 35 && salario >= 5.000){
+        if (requisicao.getIdade() >= 35 && requisicao.getSalario() >= 5.000){
             possiveisEscolhas.add("Carro Luxo");
         }
         return possiveisEscolhas;
     }
 }
+
+
+
 
