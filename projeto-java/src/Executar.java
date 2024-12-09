@@ -19,8 +19,10 @@ public class Executar {
         System.out.println("Informe o seu salário: ");
         double  salario = scan.nextDouble();
 
+        RequisicaoLocacaoAutomovel requisicao = new RequisicaoLocacaoAutomovel(nome, idade, salario, estadoResidente);
 
-        List<String> automoveisDisponiveis = LocacaoAutomovel.escolherAutomovelPossivel(idade, salario, estadoResidente);
+
+        List<String> automoveisDisponiveis = LocacaoAutomovel.escolherAutomovelPossivel(requisicao);
         if(automoveisDisponiveis.isEmpty()){
             System.out.println(nome + ", não puedes locar garotito" );
         } else{
